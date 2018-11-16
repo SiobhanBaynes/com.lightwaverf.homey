@@ -1,2 +1,3 @@
-# com.lightwaverf
-Lightwave RF app
+# Lightwave RF
+
+Lightwave RF Homey app
