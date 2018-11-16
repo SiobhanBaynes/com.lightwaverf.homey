@@ -1,0 +1,13 @@
+{
+    "id": "JSJSLW320WH",
+    "name": {
+        "en": "JSJSLW320WH Socket"
+    },
+    "$extends": [
+        "defaults",
+        "rf.socket"
+    ],
+    "rf": {
+        "signal": "lightwaverf"
+    }
+}

@@ -2,12 +2,12 @@
 
 const Homey = require('homey');
 
-class MyApp extends Homey.App {
+class LightwaveRF extends Homey.App {
 	
 	onInit() {
-		this.log('MyApp is running...');
+		this.log('Lightwave RF is running...');
 	}
 	
 }
 
-module.exports = MyApp;
+module.exports = LightwaveRF;

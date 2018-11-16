@@ -1,0 +1,110 @@
+{
+    "$flow": {
+        "triggers": [
+            {
+                "id": "{{driverId}}:received",
+                "title": {
+                    "en": "Button is pressed",
+                    "nl": "Knop is ingedrukt"
+                },
+                "args": [
+                    {
+                        "name": "channel",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "1",
+                                "label": {
+                                    "en": "Channel A",
+                                    "nl": "Kanaal A"
+                                }
+                            },
+                            {
+                                "id": "2",
+                                "label": {
+                                    "en": "Channel B",
+                                    "nl": "Kanaal B"
+                                }
+                            },
+                            {
+                                "id": "3",
+                                "label": {
+                                    "en": "Channel C",
+                                    "nl": "Kanaal C"
+                                }
+                            },
+                            {
+                                "id": "4",
+                                "label": {
+                                    "en": "Channel D",
+                                    "nl": "Kanaal D"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "unit",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "1",
+                                "label": {
+                                    "en": "Button 1",
+                                    "nl": "Knop 1"
+                                }
+                            },
+                            {
+                                "id": "2",
+                                "label": {
+                                    "en": "Button 2",
+                                    "nl": "Knop 2"
+                                }
+                            },
+                            {
+                                "id": "3",
+                                "label": {
+                                    "en": "Button 3",
+                                    "nl": "Knop 3"
+                                }
+                            },
+                            {
+                                "id": "4",
+                                "label": {
+                                    "en": "Button 4",
+                                    "nl": "Knop 4"
+                                }
+                            },
+                            {
+                                "id": "4",
+                                "label": {
+                                    "en": "Group Button",
+                                    "nl": "Groep Knop"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "command",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "1",
+                                "label": {
+                                    "en": "On",
+                                    "nl": "Aan"
+                                }
+                            },
+                            {
+                                "id": "0",
+                                "label": {
+                                    "en": "Off",
+                                    "nl": "Uit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

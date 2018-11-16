@@ -1,0 +1,24 @@
+{
+    "id": "JSJSLW100WH",
+    "name": {
+        "en": "JSJSLW100WH Remote"
+    },
+    "$extends": [
+        "defaults",
+        "pair.remote",
+        "flow.remote"
+    ],
+    "rf": {
+        "signal": "lightwaverf"
+    },
+    "class" : "other",
+    "capabilities": [],
+    "$pairOptions": {
+        "rf.imitate": {
+            "svg": "./assets/svg/remote.pair.svg"
+        },
+        "rf.test": {
+            "svg": "./assets/svg/remote.test.svg"
+        }
+    }
+}

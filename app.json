@@ -10,15 +10,525 @@
     "en": "Lightwave RF Homey app"
   },
   "category": [
-    "lights"
+    "lights",
+    "appliances"
   ],
-  "permissions": [],
+  "permissions": [
+    "homey:wireless:433"
+  ],
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
   },
   "author": {
     "name": "Athom B.V.",
-    "email": "apps@athom.nl"
+    "email": "info@athom.nl"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "JSJSLW100WH:received",
+        "title": {
+          "en": "Button is pressed",
+          "nl": "Knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=JSJSLW100WH"
+          },
+          {
+            "name": "channel",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Channel A",
+                  "nl": "Kanaal A"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Channel B",
+                  "nl": "Kanaal B"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Channel C",
+                  "nl": "Kanaal C"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Channel D",
+                  "nl": "Kanaal D"
+                }
+              }
+            ]
+          },
+          {
+            "name": "unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1",
+                  "nl": "Knop 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Button 2",
+                  "nl": "Knop 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Button 3",
+                  "nl": "Knop 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Button 4",
+                  "nl": "Knop 4"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Group Button",
+                  "nl": "Groep Knop"
+                }
+              }
+            ]
+          },
+          {
+            "name": "command",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "pair": [
+        {
+          "id": "rf.imitate",
+          "options": {
+            "title": "rf.pair.imitate.title.remote",
+            "body": "rf.pair.imitate.body.remote",
+            "svg": "./assets/svg/remote.pair.svg"
+          }
+        },
+        {
+          "id": "rf.test",
+          "navigation": {
+            "prev": "rf.imitate",
+            "next": "rf.done"
+          },
+          "options": {
+            "svg": "./assets/svg/remote.test.svg"
+          }
+        },
+        {
+          "id": "rf.done"
+        }
+      ],
+      "id": "JSJSLW100WH",
+      "name": {
+        "en": "JSJSLW100WH Remote"
+      },
+      "rf": {
+        "signal": "lightwaverf"
+      },
+      "class": "other",
+      "capabilities": []
+    },
+    {
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "pair": [
+        {
+          "id": "rf.choice",
+          "options": {
+            "title": "rf.pair.choice.title.switch",
+            "body": "rf.pair.choice.body.switch",
+            "choices": [
+              {
+                "name": "rf.pair.choice.buttons.copy.default",
+                "view": "rf.imitate",
+                "svg": "./assets/svg/remote.svg"
+              },
+              {
+                "name": "rf.pair.choice.buttons.generate.default",
+                "view": "rf.program",
+                "svg": "./assets/svg/socket.svg"
+              }
+            ]
+          }
+        },
+        {
+          "id": "rf.imitate",
+          "navigation": {
+            "prev": "rf.choice"
+          }
+        },
+        {
+          "id": "rf.test_switch",
+          "navigation": {
+            "prev": "rf.imitate",
+            "next": "choose_slave"
+          }
+        },
+        {
+          "template": "choose_slave",
+          "id": "choose_slave",
+          "navigation": {
+            "prev": "rf.test_switch",
+            "next": "rf.done"
+          }
+        },
+        {
+          "id": "rf.program",
+          "navigation": {
+            "prev": "rf.choice"
+          }
+        },
+        {
+          "id": "rf.test_switch.2",
+          "options": {
+            "body": "rf.pair.test.body.switch_generated"
+          },
+          "navigation": {
+            "prev": "rf.program",
+            "next": "choose_slave.2"
+          }
+        },
+        {
+          "template": "choose_slave",
+          "id": "choose_slave.2",
+          "navigation": {
+            "prev": "rf.test_switch.2",
+            "next": "rf.done"
+          }
+        },
+        {
+          "id": "rf.done"
+        }
+      ],
+      "id": "JSJSLW320WH",
+      "name": {
+        "en": "JSJSLW320WH Socket"
+      },
+      "rf": {
+        "signal": "lightwaverf"
+      }
+    }
+  ],
+  "signals": {
+    "433": {
+      "lightwaverf": {
+        "sof": [
+          320,
+          345
+        ],
+        "eof": [
+          270
+        ],
+        "words": [
+          [
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            1450
+          ],
+          [
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450
+          ],
+          [
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345
+          ],
+          [
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345
+          ],
+          [
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450
+          ],
+          [
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345
+          ],
+          [
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345
+          ],
+          [
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450
+          ],
+          [
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345
+          ],
+          [
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345
+          ],
+          [
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345
+          ],
+          [
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450
+          ],
+          [
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345
+          ],
+          [
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345
+          ],
+          [
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345
+          ],
+          [
+            320,
+            1450,
+            320,
+            345,
+            320,
+            1450,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345,
+            320,
+            345
+          ]
+        ],
+        "interval": 10500,
+        "repetitions": 20,
+        "sensitivity": 0.2,
+        "minimalLength": 10,
+        "maximalLength": 10
+      }
+    }
   }
 }
