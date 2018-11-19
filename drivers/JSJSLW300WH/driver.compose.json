@@ -1,0 +1,13 @@
+{
+    "id": "JSJSLW300WH",
+    "name": {
+        "en": "JSJSLW300WH Dimmer Socket"
+    },
+    "$extends": [
+        "defaults",
+        "rf.dimmer"
+    ],
+    "rf": {
+        "signal": "lightwaverf"
+    }
+}
