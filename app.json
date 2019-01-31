@@ -1,5 +1,5 @@
 {
-  "id": "com.lightwaverf",
+  "id": "com.lightwaverf.homey",
   "version": "1.0.0",
   "compatibility": ">=1.5.13",
   "sdk": 2,
