@@ -1,0 +1,12 @@
+{
+    "images": {
+        "large": "{{driverPath}}/assets/images/large.png",
+        "small": "{{driverPath}}/assets/images/small.png"
+    },
+    "icon": "{{driverPath}}/assets/icon.svg",
+    "capabilities": [],
+    "class": "other",
+    "rf": {
+        "signal": "lightwaverf"
+    }
+}

@@ -1,7 +1,7 @@
 {
   "id": "com.lightwaverf",
   "version": "1.0.0",
-  "compatibility": ">=1.5.6",
+  "compatibility": ">=1.5.13",
   "sdk": 2,
   "name": {
     "en": "Lightwave RF"
@@ -134,11 +134,137 @@
             ]
           }
         ]
+      },
+      {
+        "id": "JSJSLW104WH:received",
+        "title": {
+          "en": "Mood button is pressed",
+          "nl": "Hoofd knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=JSJSLW104WH"
+          },
+          {
+            "name": "parameter",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "2048",
+                "label": {
+                  "en": "Mood 3",
+                  "nl": "Knop 3"
+                }
+              },
+              {
+                "id": "1024",
+                "label": {
+                  "en": "Mood 2",
+                  "nl": "Knop 2"
+                }
+              },
+              {
+                "id": "512",
+                "label": {
+                  "en": "Mood 1",
+                  "nl": "Knop 1"
+                }
+              },
+              {
+                "id": "192",
+                "label": {
+                  "en": "Master on",
+                  "nl": "Alles aan"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "JSJSLW104WH:received",
+        "title": {
+          "en": "Button is pressed",
+          "nl": "Knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=JSJSLW104WH"
+          },
+          {
+            "name": "unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Channel 1",
+                  "nl": "Kanaal 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Channel 2",
+                  "nl": "Kanaal 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Channel 3",
+                  "nl": "Kanaal 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Channel 4",
+                  "nl": "Kanaal 4"
+                }
+              }
+            ]
+          },
+          {
+            "name": "command",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   "drivers": [
     {
+      "images": {
+        "large": "/drivers/JSJSLW100WH/assets/images/large.png",
+        "small": "/drivers/JSJSLW100WH/assets/images/small.png"
+      },
+      "icon": "/drivers/JSJSLW100WH/assets/icon.svg",
+      "capabilities": [],
+      "class": "other",
+      "rf": {
+        "signal": "lightwaverf"
+      },
       "pair": [
         {
           "id": "rf.imitate",
@@ -165,19 +291,61 @@
       "id": "JSJSLW100WH",
       "name": {
         "en": "JSJSLW100WH Remote"
+      }
+    },
+    {
+      "images": {
+        "large": "/drivers/JSJSLW104WH/assets/images/large.png",
+        "small": "/drivers/JSJSLW104WH/assets/images/small.png"
       },
+      "icon": "/drivers/JSJSLW104WH/assets/icon.svg",
+      "capabilities": [],
+      "class": "other",
       "rf": {
         "signal": "lightwaverf"
       },
-      "class": "other",
-      "capabilities": []
+      "pair": [
+        {
+          "id": "rf.imitate",
+          "options": {
+            "title": "rf.pair.imitate.title.remote",
+            "body": "rf.pair.imitate.body.remote",
+            "svg": "./assets/svg/remote.pair.svg"
+          }
+        },
+        {
+          "id": "rf.test",
+          "navigation": {
+            "prev": "rf.imitate",
+            "next": "rf.done"
+          },
+          "options": {
+            "svg": "./assets/svg/remote.test.svg"
+          }
+        },
+        {
+          "id": "rf.done"
+        }
+      ],
+      "id": "JSJSLW104WH",
+      "name": {
+        "en": "JSJSLW104WH Mood Remote"
+      }
     },
     {
-      "class": "socket",
+      "images": {
+        "large": "/drivers/JSJSLW300WH/assets/images/large.png",
+        "small": "/drivers/JSJSLW300WH/assets/images/small.png"
+      },
+      "icon": "/drivers/JSJSLW300WH/assets/icon.svg",
       "capabilities": [
         "onoff",
         "dim"
       ],
+      "class": "socket",
+      "rf": {
+        "signal": "lightwaverf"
+      },
       "pair": [
         {
           "id": "rf.choice",
@@ -202,6 +370,9 @@
           "id": "rf.imitate",
           "navigation": {
             "prev": "rf.choice"
+          },
+          "options": {
+            "svg": "./assets/svg/remote.pair.svg"
           }
         },
         {
@@ -223,6 +394,9 @@
           "id": "rf.program",
           "navigation": {
             "prev": "rf.choice"
+          },
+          "options": {
+            "svg": "./assets/svg/socket.pair.svg"
           }
         },
         {
@@ -250,16 +424,21 @@
       "id": "JSJSLW300WH",
       "name": {
         "en": "JSJSLW300WH Dimmer Socket"
-      },
-      "rf": {
-        "signal": "lightwaverf"
       }
     },
     {
-      "class": "socket",
+      "images": {
+        "large": "/drivers/JSJSLW320WH/assets/images/large.png",
+        "small": "/drivers/JSJSLW320WH/assets/images/small.png"
+      },
+      "icon": "/drivers/JSJSLW320WH/assets/icon.svg",
       "capabilities": [
         "onoff"
       ],
+      "class": "socket",
+      "rf": {
+        "signal": "lightwaverf"
+      },
       "pair": [
         {
           "id": "rf.choice",
@@ -284,6 +463,9 @@
           "id": "rf.imitate",
           "navigation": {
             "prev": "rf.choice"
+          },
+          "options": {
+            "svg": "./assets/svg/remote.pair.svg"
           }
         },
         {
@@ -305,6 +487,9 @@
           "id": "rf.program",
           "navigation": {
             "prev": "rf.choice"
+          },
+          "options": {
+            "svg": "./assets/svg/socket.pair.svg"
           }
         },
         {
@@ -332,9 +517,6 @@
       "id": "JSJSLW320WH",
       "name": {
         "en": "JSJSLW320WH Socket"
-      },
-      "rf": {
-        "signal": "lightwaverf"
       }
     }
   ],

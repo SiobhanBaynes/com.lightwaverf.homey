@@ -1,0 +1,19 @@
+{
+    "id": "JSJSLW104WH",
+    "name": {
+        "en": "JSJSLW104WH Mood Remote"
+    },
+    "$extends": [
+        "defaults",
+        "pair.remote",
+        "flow.mood_remote"
+    ],
+    "$pairOptions": {
+        "rf.imitate": {
+            "svg": "./assets/svg/remote.pair.svg"
+        },
+        "rf.test": {
+            "svg": "./assets/svg/remote.test.svg"
+        }
+    }
+}

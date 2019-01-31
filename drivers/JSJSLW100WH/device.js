@@ -1,6 +1,6 @@
 'use strict';
 
-const Remote = require('../../lib/LightwaveRFDevice');
+const Remote = require('../../lib/devices/remote');
 
 // To extend from another class change the line below to
 // module.exports = RFDevice => class 50970RDevice extends MyGenericDevice(RFDevice) {

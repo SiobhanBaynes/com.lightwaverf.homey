@@ -7,7 +7,12 @@
         "defaults",
         "rf.dimmer"
     ],
-    "rf": {
-        "signal": "lightwaverf"
+    "$pairOptions": {
+        "rf.imitate": {
+            "svg": "./assets/svg/remote.pair.svg"
+        },
+        "rf.program": {
+            "svg": "./assets/svg/socket.pair.svg"
+        }
     }
 }
