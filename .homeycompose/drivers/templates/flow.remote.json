@@ -75,7 +75,7 @@
                                 }
                             },
                             {
-                                "id": "4",
+                                "id": "group",
                                 "label": {
                                     "en": "Group Button",
                                     "nl": "Groep Knop"

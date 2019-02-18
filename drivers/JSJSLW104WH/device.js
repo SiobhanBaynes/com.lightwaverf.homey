@@ -10,6 +10,8 @@ module.exports = RFDevice => class JSJSLW104WHDevice extends Remote(RFDevice) {
 
     async onFlowTriggerFrameReceived(args, state) {
 
+		if(state.command === 0 && state.parameter === 0 ) return false;
+
         const [key, cmd] = (args.button || '').split('_');
 
         switch(key) {
@@ -18,7 +20,7 @@ module.exports = RFDevice => class JSJSLW104WHDevice extends Remote(RFDevice) {
             case 'power':
                 return state.channel === 4 && state.unit === 4 && state.command === 0 && state.parameter === 192;
             default:
-                return state.channel === 1 && state.unit === Number(key) && state.onoff === (cmd === 'on') && state.parameter === 0;
+                return state.channel === 1 && state.unit === Number(key) && state.onoff === (cmd === 'on');
         }
     }
 };
