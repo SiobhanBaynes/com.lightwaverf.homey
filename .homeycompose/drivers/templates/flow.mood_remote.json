@@ -4,40 +4,96 @@
             {
                 "id": "{{driverId}}:received",
                 "title": {
-                    "en": "Mood button is pressed",
-                    "nl": "Hoofd knop is ingedrukt"
+                    "en": "Button is pressed",
+                    "nl": "Knop is ingedrukt"
                 },
                 "args": [
                     {
-                        "name": "parameter",
+                        "name": "button",
                         "type": "dropdown",
                         "values": [
                             {
-                                "id": "2048",
+                                "id": "mood_3",
                                 "label": {
                                     "en": "Mood 3",
                                     "nl": "Knop 3"
                                 }
                             },
                             {
-                                "id": "1024",
+                                "id": "mood_2",
                                 "label": {
                                     "en": "Mood 2",
                                     "nl": "Knop 2"
                                 }
                             },
                             {
-                                "id": "512",
+                                "id": "mood_1",
                                 "label": {
                                     "en": "Mood 1",
                                     "nl": "Knop 1"
                                 }
                             },
                             {
-                                "id": "192",
+                                "id": "power_on",
                                 "label": {
-                                    "en": "Master on",
+                                    "en": "Power on",
                                     "nl": "Alles aan"
+                                }
+                            },
+                            {
+                                "id": "1_on",
+                                "label": {
+                                    "en": "1 on",
+                                    "nl": "1 aan"
+                                }
+                            },
+                            {
+                                "id": "1_off",
+                                "label": {
+                                    "en": "1 off",
+                                    "nl": "1 uit"
+                                }
+                            },
+                            {
+                                "id": "2_on",
+                                "label": {
+                                    "en": "2 on",
+                                    "nl": "2 aan"
+                                }
+                            },
+                            {
+                                "id": "2_off",
+                                "label": {
+                                    "en": "2 off",
+                                    "nl": "2 uit"
+                                }
+                            },
+                            {
+                                "id": "3_on",
+                                "label": {
+                                    "en": "3 on",
+                                    "nl": "3 aan"
+                                }
+                            },
+                            {
+                                "id": "3_off",
+                                "label": {
+                                    "en": "3 off",
+                                    "nl": "3 uit"
+                                }
+                            },
+                            {
+                                "id": "4_on",
+                                "label": {
+                                    "en": "4 on",
+                                    "nl": "4 aan"
+                                }
+                            },
+                            {
+                                "id": "4_off",
+                                "label": {
+                                    "en": "4 off",
+                                    "nl": "4 uit"
                                 }
                             }
                         ]
