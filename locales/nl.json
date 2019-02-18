@@ -528,5 +528,14 @@
       "pairdevice_invalid_data": "Nieuw gekoppelde apparaat data is incorrect, wijzigingen worden teruggedraaid.",
       "invalid_send_data": "Data om te versturen is incorrect."
     }
+  },
+  "lwrf": {
+    "pair": {
+      "socket": {
+        "learnmode": {
+          "enter": "Houd de programmeer knop van de contactdoos een paar seconden ingehouden om deze in programeer modus te zetten. Klik daarna op de 'Programmeer' knop. De status LED zou daarna snel blauw moeten knipperen."
+        }
+      }
+    }
   }
 }

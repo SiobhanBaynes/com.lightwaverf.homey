@@ -1,0 +1,9 @@
+{
+    "pair": {
+        "socket": {
+            "learnmode": {
+                "enter": "Houd de programmeer knop van de contactdoos een paar seconden ingehouden om deze in programeer modus te zetten. Klik daarna op de 'Programmeer' knop. De status LED zou daarna snel blauw moeten knipperen."
+            }
+        }
+    }
+}

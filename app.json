@@ -452,7 +452,9 @@
             "prev": "rf.choice"
           },
           "options": {
-            "svg": "./assets/svg/socket.pair.svg"
+            "svg": "./assets/svg/socket.pair.svg",
+            "title": "rf.pair.program.title.socket",
+            "body": "lwrf.pair.socket.learnmode.enter"
           }
         },
         {
@@ -545,7 +547,9 @@
             "prev": "rf.choice"
           },
           "options": {
-            "svg": "./assets/svg/socket.pair.svg"
+            "svg": "./assets/svg/socket.pair.svg",
+            "title": "rf.pair.program.title.socket",
+            "body": "lwrf.pair.socket.learnmode.enter"
           }
         },
         {

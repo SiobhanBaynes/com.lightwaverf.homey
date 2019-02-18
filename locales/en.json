@@ -756,5 +756,15 @@
       "pairdevice_invalid_data": "New pairing device data is invalid, changes are reverted.",
       "invalid_send_data": "Invalid data send request. Please contact the developer."
     }
+  },
+  "lwrf": {
+    "pair.socket.learnmode.enter": "Press and hold the learn button on the socket for 5 seconds to enter learn mode. Then press the program button below.",
+    "pair": {
+      "socket": {
+        "learnmode": {
+          "enter": "Press and hold the learn button on the side of the socket for 5 seconds to enter learn mode. Then press the program button below. The status LED should then blink blue."
+        }
+      }
+    }
   }
 }
